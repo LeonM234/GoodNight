@@ -33,6 +33,70 @@ namespace Good_Night
         {
         }
 
+        private void HoursComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("1 hour");
+            data.Add("2 hours");
+            data.Add("3 hours");
+            data.Add("4 hours");
+            data.Add("5 hours");
+            data.Add("6 hours");
+            data.Add("7 hours");
+            data.Add("8 hours");
+            data.Add("9 hours");
+            data.Add("10 hours");
+            data.Add("11 hours");
+            data.Add("12 hours");
+            data.Add("13 hours");
+            data.Add("14 hours");
+            data.Add("15 hours...seriously?");
+
+            // Get the ComboBox reference.
+            var hourscombobox = sender as ComboBox;
+
+            // Assign the ItemsSource to the List.
+            hourscombobox.ItemsSource = data;
+
+            // Make the 8 hours default selected.
+            hourscombobox.SelectedIndex = 7;
+        }
+
+        private void HoursComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Get the ComboBox.
+            var hourscomboBox = sender as ComboBox;
+
+            // Set SelectedItem as Window Title.
+            string value = hourscomboBox.SelectedItem as string;
+            this.Title = "Selected: " + value;
+        }
+
+        private void MinutesComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("0 minutes");
+            data.Add("10 minutes");
+            data.Add("20 minutes");
+            data.Add("30 minutes");
+            data.Add("40 minutes");
+            data.Add("50 minutes");
+
+            var minutescombobox = sender as ComboBox;
+
+            minutescombobox.ItemsSource = data;
+
+            minutescombobox.SelectedIndex = 0;
+        }
+
+        private void MinutesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var minutescomboBox = sender as ComboBox;
+
+            string value = minutescomboBox.SelectedItem as string;
+            this.Title = "Selected: " + value;
+        }
+
         private void MorningMoodButton_Click(object sender, RoutedEventArgs e)
         {
             // When morning mood button clicked
