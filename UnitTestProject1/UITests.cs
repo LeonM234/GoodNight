@@ -6,10 +6,10 @@ using TestStack.White.Factory;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
 
-namespace UnitTestProject1
+namespace TestGood_Night
 {
     [TestClass]
-    public class ZeroStateTests
+    public class UITests
     {
         private static TestContext test_context;
         private static Window window;

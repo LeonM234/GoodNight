@@ -7,7 +7,7 @@ using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.BDDfy;
 
-namespace UnitTestProject1
+namespace TestGood_Night
 {
     [TestClass]
     public class StoryTests
@@ -121,7 +121,7 @@ namespace UnitTestProject1
         {
             // Test that the view has changed
         }
-
+        
         [TestMethod]
         public void ExecuteStoryTest()
         {
