@@ -42,7 +42,8 @@ namespace Good_Night.Repository
 
         public void Delete(SleepEvent E)
         {
-            throw new NotImplementedException();
+            _dbContext.SleepEvents.Remove(E);
+            _dbContext.SaveChanges();
         }
 
         public void Clear()

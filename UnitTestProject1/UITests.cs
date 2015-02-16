@@ -5,6 +5,7 @@ using TestStack.White;
 using TestStack.White.Factory;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.UIItems.Finders;
 
 namespace TestGood_Night
 {
@@ -22,7 +23,7 @@ namespace TestGood_Night
             var applicationDir = _context.DeploymentDirectory;
             var applicationPath = Path.Combine(applicationDir, "..\\..\\..\\UnitTestProject1\\bin\\Debug\\Good_Night");
             application = Application.Launch(applicationPath);
-            window = application.GetWindow("MainWindow", InitializeOption.NoCache);
+            window = application.GetWindow(SearchCriteria.ByAutomationId("MainWindow"), InitializeOption.NoCache);
 
         }
 
