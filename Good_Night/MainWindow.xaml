@@ -30,34 +30,18 @@
             <TextBlock FontWeight="SemiBold">How I Felt in the Morning</TextBlock>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0, 10, 0, 0">
-            <RadioButton x:Name="MorningButton1" FontWeight="SemiBold" Margin="0, 0, 5, 0">1</RadioButton>
-            <RadioButton x:Name="MorningButton2" FontWeight="SemiBold" Margin="0, 0, 5, 0">2</RadioButton>
-            <RadioButton x:Name="MorningButton3" FontWeight="SemiBold" Margin="0, 0, 5, 0">3</RadioButton>
-            <RadioButton x:Name="MorningButton4" FontWeight="SemiBold" Margin="0, 0, 5, 0">4</RadioButton>
-            <RadioButton x:Name="MorningButton5" FontWeight="SemiBold" Margin="0, 0, 5, 0">5</RadioButton>
-            <RadioButton x:Name="MorningButton6" FontWeight="SemiBold" Margin="0, 0, 5, 0">6</RadioButton>
-            <RadioButton x:Name="MorningButton7" FontWeight="SemiBold" Margin="0, 0, 5, 0">7</RadioButton>
-            <RadioButton x:Name="MorningButton8" FontWeight="SemiBold" Margin="0, 0, 5, 0">8</RadioButton>
-            <RadioButton x:Name="MorningButton9" FontWeight="SemiBold" Margin="0, 0, 5, 0">9</RadioButton>
-            <RadioButton x:Name="MorningButton10" FontWeight="SemiBold" Margin="0, 0, 5, 0">10</RadioButton>
+            <Slider x:Name="MorningSlider" FontWeight="SemiBold" Orientation="Horizontal" HorizontalAlignment="Center" Minimum="1" Maximum="10" SmallChange="1" TickFrequency="1" IsSnapToTickEnabled="True" Width="300" TickPlacement="BottomRight" ></Slider>
+            <TextBlock Margin="10, 0, 0, 0" Text="{Binding Value, ElementName=MorningSlider}" />
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="412.5" Margin="0, 10, 0, 0">
             <TextBlock FontWeight="SemiBold">How I Felt During the Day</TextBlock>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0, 10, 0, 0">
-            <RadioButton x:Name="DayButton1" FontWeight="SemiBold" Margin="0, 0, 5, 0">1</RadioButton>
-            <RadioButton x:Name="DayButton2" FontWeight="SemiBold" Margin="0, 0, 5, 0">2</RadioButton>
-            <RadioButton x:Name="DayButton3" FontWeight="SemiBold" Margin="0, 0, 5, 0">3</RadioButton>
-            <RadioButton x:Name="DayButton4" FontWeight="SemiBold" Margin="0, 0, 5, 0">4</RadioButton>
-            <RadioButton x:Name="DayButton5" FontWeight="SemiBold" Margin="0, 0, 5, 0">5</RadioButton>
-            <RadioButton x:Name="DayButton6" FontWeight="SemiBold" Margin="0, 0, 5, 0">6</RadioButton>
-            <RadioButton x:Name="DayButton7" FontWeight="SemiBold" Margin="0, 0, 5, 0">7</RadioButton>
-            <RadioButton x:Name="DayButton8" FontWeight="SemiBold" Margin="0, 0, 5, 0">8</RadioButton>
-            <RadioButton x:Name="DayButton9" FontWeight="SemiBold" Margin="0, 0, 5, 0">9</RadioButton>
-            <RadioButton x:Name="DayButton10" FontWeight="SemiBold" Margin="0, 0, 5, 0">10</RadioButton>
+            <Slider x:Name="DaySlider" FontWeight="SemiBold" Orientation="Horizontal" HorizontalAlignment="Center" Minimum="1" Maximum="10" SmallChange="1" TickFrequency="1" IsSnapToTickEnabled="True" Width="300" TickPlacement="BottomRight" ></Slider>
+            <TextBlock Margin="10, 0, 0, 0" Text="{Binding Value, ElementName=DaySlider}" />
         </StackPanel>
         <StackPanel Margin="0, 20, 0, 0">
-            <Button x:Name="Submit" Background="#FF00FFDC" Width="300" FontWeight="SemiBold">SUBMIT SLEEP INFO</Button>
+            <Button x:Name="Submit" Background="#FF00FFDC" Width="300" FontWeight="SemiBold" Click="Submit_Click">SUBMIT SLEEP INFO</Button>
         </StackPanel>
     </StackPanel>
 </Window>

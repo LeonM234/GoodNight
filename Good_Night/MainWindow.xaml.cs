@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Good_Night.Model;
+using Good_Night.Repository;
+using Good_Night;
 
 namespace Good_Night
 {
@@ -20,6 +23,8 @@ namespace Good_Night
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static SleepEventRepository repo = new SleepEventRepository();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -102,6 +107,21 @@ namespace Good_Night
             // When morning mood button clicked
             // Either disable other buttons or only allow one radio button
             // at a time to be "filled"
+        }
+
+        public void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            // store hours slept
+            var hours = Convert.ToInt32(HoursComboBox.SelectedValue);
+            // store minutes slept
+            var minutes = Convert.ToInt32(MinutesComboBox.SelectedValue);
+            // store date of sleep
+            string date = DatePicker.SelectedDate.ToString();
+            // store morning feels
+            var morning = Convert.ToInt32(MorningSlider.Value);
+            // store day feels
+            var day = Convert.ToInt32(DaySlider.Value);
+            repo.Add(new SleepEvent(hours, minutes, date, morning, day));
         }
     }
 }
