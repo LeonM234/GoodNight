@@ -40,22 +40,22 @@ namespace Good_Night
 
         private void HoursComboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> data = new List<string>();
-            data.Add("1 hour");
-            data.Add("2 hours");
-            data.Add("3 hours");
-            data.Add("4 hours");
-            data.Add("5 hours");
-            data.Add("6 hours");
-            data.Add("7 hours");
-            data.Add("8 hours");
-            data.Add("9 hours");
-            data.Add("10 hours");
-            data.Add("11 hours");
-            data.Add("12 hours");
-            data.Add("13 hours");
-            data.Add("14 hours");
-            data.Add("15 hours...seriously?");
+            List<int> data = new List<int>();
+            data.Add(1);
+            data.Add(2);
+            data.Add(3);
+            data.Add(4);
+            data.Add(5);
+            data.Add(6);
+            data.Add(7);
+            data.Add(8);
+            data.Add(9);
+            data.Add(10);
+            data.Add(11);
+            data.Add(12);
+            data.Add(13);
+            data.Add(14);
+            data.Add(15);
 
             // Get the ComboBox reference.
             var hourscombobox = sender as ComboBox;
@@ -79,13 +79,13 @@ namespace Good_Night
 
         private void MinutesComboBox_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> data = new List<string>();
-            data.Add("0 minutes");
-            data.Add("10 minutes");
-            data.Add("20 minutes");
-            data.Add("30 minutes");
-            data.Add("40 minutes");
-            data.Add("50 minutes");
+            List<int> data = new List<int>();
+            data.Add(0);
+            data.Add(10);
+            data.Add(20);
+            data.Add(30);
+            data.Add(40);
+            data.Add(50);
 
             var minutescombobox = sender as ComboBox;
 
@@ -111,15 +111,13 @@ namespace Good_Night
 
         public void Submit_Click(object sender, RoutedEventArgs e)
         {
-            // store hours slept
-            var hours = Convert.ToInt32(HoursComboBox.SelectedValue);
+            var hours = Convert.ToInt32(HoursComboBox.SelectionBoxItem);
+                //int.Parse(HoursComboBox.Items[HoursComboBox.SelectedIndex].ToString());
             // store minutes slept
-            var minutes = Convert.ToInt32(MinutesComboBox.SelectedValue);
-            // store date of sleep
+            var minutes = Convert.ToInt32(MinutesComboBox.SelectionBoxItem);
+                //int.Parse(MinutesComboBox.Items[MinutesComboBox.SelectedIndex].ToString());
             string date = DatePicker.SelectedDate.ToString();
-            // store morning feels
             var morning = Convert.ToInt32(MorningSlider.Value);
-            // store day feels
             var day = Convert.ToInt32(DaySlider.Value);
             repo.Add(new SleepEvent(hours, minutes, date, morning, day));
         }
