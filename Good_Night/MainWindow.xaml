@@ -6,12 +6,11 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="img/sleep-sheep.jpg" Stretch="UniformToFill"/>
         </StackPanel.Background>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="825" Height="100" Orientation="Horizontal">
-            <Button x:Name="HomeButton" Width="250" Height="100" Margin="147.5,0,15,0" Click="HomeButton_Click" BorderBrush="#FF2034B6" Background="Aqua" FontWeight="ExtraBold" Foreground="Purple"> Enter Sleep / Mood </Button>
-            <Button x:Name="DataButton" Width="250" Height="100" Margin="15,0,147.5,0" Click="DataButton_Click" Background="Aqua" FontWeight="ExtraBold" Foreground="Purple">Sleep Data</Button>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="825" Height="50" Orientation="Horizontal">
+            <TextBlock x:Name="HomeButton" Width="350" Height="50" Background="Transparent" FontWeight="ExtraBold" Foreground="Orange" FontSize="30" Margin="250, 0, 0, 0"> Enter Sleep and Mood</TextBlock>
         </StackPanel>
         <StackPanel>
-            <TextBlock Width="300" Padding="120, 0, 0, 0" Margin="0, 70, 0, 0" FontWeight="SemiBold" Foreground="White">Hours Slept</TextBlock>
+            <TextBlock Width="300" Padding="120, 0, 0, 0" Margin="0, 20, 0, 0" FontWeight="SemiBold" Foreground="White">Hours Slept</TextBlock>
             <ComboBox x:Name="HoursComboBox" Loaded="HoursComboBox_Loaded" SelectionChanged="HoursComboBox_SelectionChanged" Width="300" Margin="0, 10, 0, 0"></ComboBox>
             <TextBlock Width="300" Padding="120, 0, 0, 0" Margin="0, 10, 0, 0" FontWeight="SemiBold" Foreground="White">Minutes Slept</TextBlock>
             <ComboBox x:Name="MinutesComboBox" Loaded="MinutesComboBox_Loaded" SelectionChanged="MinutesComboBox_SelectionChanged" Width="300" Margin="0, 10, 0, 0" Text="Minutes Slept"></ComboBox>
@@ -23,7 +22,7 @@
             <Button x:Name="LastNightButton" Width="130" Height="22" Margin="0, 10, 10, 0">Last Night</Button>
             <DatePicker x:Name="DatePicker" Width="130" Margin="10, 10, 0, 0"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="412.5" Margin="0, 75, 0, 0">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="412.5" Margin="0, 45, 0, 0">
             <TextBlock FontWeight="SemiBold" Foreground="White">How I Felt in the Morning</TextBlock>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0, 10, 0, 0">
@@ -40,7 +39,9 @@
         <StackPanel Margin="0, 20, 0, 0">
             <Button x:Name="Submit" Background="#FF00FFDC" Width="300" FontWeight="SemiBold" Click="Submit_Click" Foreground="Purple">SUBMIT SLEEP INFO</Button>
         </StackPanel>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="825" Height="40" Margin="0, 20, 0, 0" Orientation="Horizontal">
+            <TextBlock x:Name="DataButton" Width="250" Height="100" Background="Transparent" FontWeight="ExtraBold" Foreground="Tomato" FontSize="30" Margin="330, 0, 0, 0">Sleep Data</TextBlock>
+        </StackPanel>
         <StackPanel Margin="0, 10, 0, 0">
             <ListBox HorizontalAlignment="Center" Height="50" Width="75" VerticalAlignment="Top" Name="HoursSleepList" ItemsSource="{Binding NotifyOnSourceUpdated=True}">
                 <ListBox.ItemTemplate>
