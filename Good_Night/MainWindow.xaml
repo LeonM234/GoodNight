@@ -43,12 +43,13 @@
             <TextBlock x:Name="DataButton" Width="250" Height="100" Background="Transparent" FontWeight="ExtraBold" Foreground="Tomato" FontSize="30" Margin="330, 0, 0, 0">Sleep Data</TextBlock>
         </StackPanel>
         <StackPanel Margin="0, 10, 0, 0">
-            <ListBox HorizontalAlignment="Center" Height="50" Width="75" VerticalAlignment="Top" Name="HoursSleepList" ItemsSource="{Binding NotifyOnSourceUpdated=True}">
+            <ListBox HorizontalAlignment="Center" Height="100" Width="250" VerticalAlignment="Top" Background="Transparent" Name="HoursSleptList" ItemsSource="{Binding NotifyOnSourceUpdated=True}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="50" Height="20" FontWeight="Black"    Text="{Binding HoursComboBox, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
-                    </StackPanel>
+                        <TextBlock Width="50" Height="20" FontWeight="Bold" Foreground="White" Text="{Binding Hours, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Width="50" Height="20" FontWeight="Bold" Foreground="White" Text="{Binding Minutes, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
