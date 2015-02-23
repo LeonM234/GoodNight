@@ -112,10 +112,7 @@ namespace Good_Night
         public void Submit_Click(object sender, RoutedEventArgs e)
         {
             var hours = Convert.ToInt32(HoursComboBox.SelectionBoxItem);
-                //int.Parse(HoursComboBox.Items[HoursComboBox.SelectedIndex].ToString());
-            // store minutes slept
             var minutes = Convert.ToInt32(MinutesComboBox.SelectionBoxItem);
-                //int.Parse(MinutesComboBox.Items[MinutesComboBox.SelectedIndex].ToString());
             string date = DatePicker.SelectedDate.ToString();
             var morning = Convert.ToInt32(MorningSlider.Value);
             var day = Convert.ToInt32(DaySlider.Value);
