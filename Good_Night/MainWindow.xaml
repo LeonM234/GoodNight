@@ -42,18 +42,77 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="825" Height="40" Margin="0, 20, 0, 0" Orientation="Horizontal">
             <TextBlock x:Name="DataButton" Width="250" Height="100" Background="Transparent" FontWeight="ExtraBold" Foreground="Tomato" FontSize="30" Margin="330, 0, 0, 0">Sleep Data</TextBlock>
         </StackPanel>
-        <StackPanel Margin="0, 10, 0, 0">
-            <ListBox HorizontalAlignment="Center" Height="100" Width="250" VerticalAlignment="Top" Background="Transparent" Name="HoursSleptList" ItemsSource="{Binding NotifyOnSourceUpdated=True}">
+        
+        <!--<Grid ShowGridLines="True" Height="250" Width="700">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <ListBox HorizontalAlignment="Center" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" Name="HoursSleptList" ItemsSource="{Binding NotifyOnSourceUpdated=True}" Margin="0,0,2,0">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="50" Height="20" FontWeight="Bold" Foreground="White" Text="{Binding Hours, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBlock Width="50" Height="20" FontWeight="Bold" Foreground="White" Text="{Binding Minutes, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <StackPanel Orientation="Vertical">
+                            <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Foreground="Orange">Hours</Label>
+                            <TextBlock Grid.Column="0" Height="Auto" Width="Auto" Grid.Row="1" FontWeight="Bold" Foreground="Orange" Text="{Binding Hours, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Column="1" Grid.Row="0" FontWeight="Bold" Foreground="Orange">Minutes</Label>
+                            <TextBlock Height="Auto" Width="Auto" FontWeight="Bold" Foreground="Orange" Grid.Column="1" Grid.Row="0" Text="{Binding Minutes, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
-        
+        </Grid>-->
+        <Canvas Width="625" Height="225" Background="AntiqueWhite" Opacity=".9" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Background="Orange" Height="50">
+                <TextBlock TextAlignment="Center" Width="125" Text="Date" Margin="0,20,0,0"/>
+                <TextBlock TextAlignment="Center" Width="125" Text="Hours" Margin="0,20,0,0"/>
+                <TextBlock TextAlignment="Center" Width="125" Text="Minutes" Margin="0,20,0,0"/>
+                <TextBlock TextAlignment="Center" Width="125" Text="Morning Feels" Margin="0,20,0,0"/>
+                <TextBlock TextAlignment="Center" Width="125" Text="Day Feels" Margin="0,20,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ListBox Width="125" Height="200"  Margin="0,50,0,0" Name="DateSleptList" ItemsSource="{Binding}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Foreground="Black" Text="{Binding Date}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox Width="125" Height="200" Margin="0,50,0,0" Name="HoursSleptList" ItemsSource="{Binding}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Hours}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox Name="MinutesSleptList" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Minutes}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox Name="MorningFeels" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox Name="DayFeels" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Canvas>
+
     </StackPanel>
 </Window>

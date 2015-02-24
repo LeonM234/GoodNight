@@ -28,7 +28,10 @@ namespace Good_Night
         public MainWindow()
         {
             InitializeComponent();
+            DateSleptList.DataContext = repo.Context().SleepEvents.Local;
             HoursSleptList.DataContext = repo.Context().SleepEvents.Local;
+            MinutesSleptList.DataContext = repo.Context().SleepEvents.Local;
+
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
