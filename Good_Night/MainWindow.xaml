@@ -97,17 +97,17 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ListBox Name="MorningFeels" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
+                <ListBox Name="MorningFeelsList" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding MorningFeels}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <ListBox Name="DayFeels" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
+                <ListBox Name="DayFeelsList" Width="125" Height="200" Margin="0,50,0,0" ItemsSource="{Binding}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding DayFeels}"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
