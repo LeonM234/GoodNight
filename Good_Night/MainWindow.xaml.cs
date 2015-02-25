@@ -103,7 +103,7 @@ namespace Good_Night
         {
             var hours = Convert.ToInt32(HoursComboBox.SelectionBoxItem);
             var minutes = Convert.ToInt32(MinutesComboBox.SelectionBoxItem);
-            string date = DatePicker.SelectedDate.ToString();
+            string date = DatePicker.SelectedDate.Value.Date.ToShortDateString();
             var morning = Convert.ToInt32(MorningSlider.Value);
             var day = Convert.ToInt32(DaySlider.Value);
             repo.Add(new SleepEvent(hours, minutes, date, morning, day));
