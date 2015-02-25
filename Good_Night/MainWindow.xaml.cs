@@ -99,13 +99,6 @@ namespace Good_Night
             this.Title = "Selected: " + value;
         }
 
-        private void MorningMoodButton_Click(object sender, RoutedEventArgs e)
-        {
-            // When morning mood button clicked
-            // Either disable other buttons or only allow one radio button
-            // at a time to be "filled"
-        }
-
         public void Submit_Click(object sender, RoutedEventArgs e)
         {
             var hours = Convert.ToInt32(HoursComboBox.SelectionBoxItem);
@@ -119,6 +112,11 @@ namespace Good_Night
             DatePicker.SelectedDate = DateTime.Today;
             MorningSlider.Value = 1;
             DaySlider.Value = 1;
+        }
+
+        public void StartOver_Click(object sender, RoutedEventArgs e)
+        {
+            repo.Clear();
         }
     }
 }
