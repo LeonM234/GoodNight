@@ -60,8 +60,8 @@ namespace Good_Night.Repository
 
         public IEnumerable<Model.SleepEvent> All()
         {
-            var qu = from SleepEvent in _dbContext.SleepEvents select SleepEvent;
-            return qu.ToList<Model.SleepEvent>();
+            var query = from SleepEvent in _dbContext.SleepEvents select SleepEvent;
+            return query.ToList<Model.SleepEvent>();
         }
 
         public Model.SleepEvent GetById(int id)
@@ -70,6 +70,13 @@ namespace Good_Night.Repository
                         where SleepEvent.SleepEventId == id
                         select SleepEvent;
             return query.First<Model.SleepEvent>();
+        }
+
+        public IEnumerable<int> AllHours()
+        {
+            var query = from SleepEvent in _dbContext.SleepEvents 
+                        select SleepEvent.Hours;
+            return query.ToList<int>();
         }
 
         public SleepEvent GetByDate(string date)

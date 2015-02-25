@@ -19,5 +19,6 @@ namespace Good_Night.Repository
         SleepEvent GetById(int id); //
         SleepEvent GetByDate(string date); //
         IQueryable<SleepEvent> SearchFor(Expression<Func<SleepEvent, bool>> predicate);
+        IEnumerable<int> AllHours();
     }
 }
