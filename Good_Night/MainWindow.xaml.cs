@@ -35,14 +35,6 @@ namespace Good_Night
             DayFeelsList.DataContext = repo.Context().SleepEvents.Local;
         }
 
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void DataButton_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void HoursComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<int> data = new List<int>();
@@ -122,6 +114,11 @@ namespace Good_Night
             var morning = Convert.ToInt32(MorningSlider.Value);
             var day = Convert.ToInt32(DaySlider.Value);
             repo.Add(new SleepEvent(hours, minutes, date, morning, day));
+            HoursComboBox.SelectedIndex = 7;
+            MinutesComboBox.SelectedIndex = 0;
+            DatePicker.SelectedDate = DateTime.Today;
+            MorningSlider.Value = 1;
+            DaySlider.Value = 1;
         }
     }
 }
