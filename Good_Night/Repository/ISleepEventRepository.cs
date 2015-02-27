@@ -10,14 +10,14 @@ namespace Good_Night.Repository
 {
     public interface ISleepEventRepository
     {
-        int GetCount(); //
-        void Add(SleepEvent E); //
-        void Delete(SleepEvent E); //
-        void Clear(); //
-        IEnumerable<SleepEvent> PastEvents(); //
-        IEnumerable<SleepEvent> All(); //
-        SleepEvent GetById(int id); //
-        SleepEvent GetByDate(string date); //
+        int GetCount();
+        void Add(SleepEvent E);
+        void Delete(SleepEvent E);
+        void Clear();
+        IEnumerable<SleepEvent> PastEvents();
+        IEnumerable<SleepEvent> All();
+        SleepEvent GetById(int id);
+        SleepEvent GetByDate(string date);
         IQueryable<SleepEvent> SearchFor(Expression<Func<SleepEvent, bool>> predicate);
         IEnumerable<int> AllHours();
     }

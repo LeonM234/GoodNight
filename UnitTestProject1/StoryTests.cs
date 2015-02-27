@@ -121,6 +121,11 @@ namespace TestGood_Night
         {
             // Test that the view has changed
         }
+
+        void WhenMultipleSleepEventsExist()
+        {
+            // Test that they are added up and/or averaged
+        }
         
         [TestMethod]
         public void ExecuteStoryTest()
