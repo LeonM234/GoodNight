@@ -72,11 +72,20 @@ namespace Good_Night.Repository
             return query.First<Model.SleepEvent>();
         }
 
+        private IEnumerable<int> query;
+
         public IEnumerable<int> AllHours()
         {
-            var query = from SleepEvent in _dbContext.SleepEvents 
+            query = from SleepEvent in _dbContext.SleepEvents 
                         select SleepEvent.Hours;
             return query.ToList<int>();
+        }
+
+        public int SumHours()
+        {
+            AllHours();
+            int SumHour = query.Sum();
+            return SumHour;    
         }
 
         public SleepEvent GetByDate(string date)

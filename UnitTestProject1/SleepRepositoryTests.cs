@@ -61,5 +61,19 @@ namespace TestGood_Night
             repo.Delete(longsleep);
             Assert.AreEqual(0, repo.GetCount());
         }
+
+        [TestMethod]
+        public void TestSumHours()
+        {
+            SleepEvent sleep1 = new SleepEvent(10, 30, "2/15/2015", 7, 8);
+            SleepEvent sleep2 = new SleepEvent(8, 20, "2/16/2015", 6, 7);
+            SleepEvent sleep3 = new SleepEvent(7, 10, "2/17/2015", 5, 6);
+            SleepEvent sleep4 = new SleepEvent(5, 40, "2/18/2015", 4, 5);
+            repo.Add(sleep1);
+            repo.Add(sleep2);
+            repo.Add(sleep3);
+            repo.Add(sleep4);
+            Assert.AreEqual(30, repo.SumHours());
+        }
     }
 }
