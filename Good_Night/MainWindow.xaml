@@ -88,8 +88,11 @@
                 </ListBox>
             </StackPanel>
         </Canvas>
-
-        <StackPanel Margin="0, 50, 0, 0" Width="250">
+        <StackPanel Margin="0, 20, 0, 0" Width="100">
+            <Label>Total Hours Slept</Label>
+            <TextBlock Background="Aqua" Name="HoursSum" Width="50" Height="20" Text="{Binding}"></TextBlock>
+        </StackPanel>
+        <StackPanel Margin="0, 20, 0, 0" Width="250">
             <Button Name="StartOver" Click="StartOver_Click" FontWeight="Bold" Foreground="Purple" Background="Aqua">Delete Current Sleep Data and Start Over</Button>
         </StackPanel>
     </StackPanel>

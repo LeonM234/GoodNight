@@ -33,6 +33,7 @@ namespace Good_Night
             MinutesSleptList.DataContext = repo.Context().SleepEvents.Local;
             MorningFeelsList.DataContext = repo.Context().SleepEvents.Local;
             DayFeelsList.DataContext = repo.Context().SleepEvents.Local;
+            HoursSum.DataContext = repo.SumHours();
         }
 
         private void HoursComboBox_Loaded(object sender, RoutedEventArgs e)
@@ -112,6 +113,7 @@ namespace Good_Night
             DatePicker.SelectedDate = DateTime.Today;
             MorningSlider.Value = 1;
             DaySlider.Value = 1;
+            HoursSum.DataContext = repo.SumHours();
         }
 
         public void StartOver_Click(object sender, RoutedEventArgs e)
