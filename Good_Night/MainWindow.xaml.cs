@@ -34,6 +34,7 @@ namespace Good_Night
             MorningFeelsList.DataContext = repo.Context().SleepEvents.Local;
             DayFeelsList.DataContext = repo.Context().SleepEvents.Local;
             HoursSum.DataContext = repo.SumHours();
+            AvgHours.DataContext = repo.AverageHours();
         }
 
         private void HoursComboBox_Loaded(object sender, RoutedEventArgs e)
@@ -114,6 +115,7 @@ namespace Good_Night
             MorningSlider.Value = 1;
             DaySlider.Value = 1;
             HoursSum.DataContext = repo.SumHours();
+            AvgHours.DataContext = repo.AverageHours();
         }
 
         public void StartOver_Click(object sender, RoutedEventArgs e)
