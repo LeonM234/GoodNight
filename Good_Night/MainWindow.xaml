@@ -88,7 +88,7 @@
                 </ListBox>
             </StackPanel>
         </Canvas>
-        <StackPanel Margin="0, 30, 0, 0" Width="620" Orientation="Horizontal">
+        <StackPanel Margin="0, 30, 0, 0" Width="420" Orientation="Horizontal">
             <Label FontWeight="ExtraBold">Total Hours Slept</Label>
             <TextBlock Background="Aqua" Name="HoursSum" Width="50" Height="20" Text="{Binding}" TextAlignment="Center" FontWeight="Bold"></TextBlock>
             <Label HorizontalAlignment="Right" FontWeight="ExtraBold">Average Hours Slept</Label>

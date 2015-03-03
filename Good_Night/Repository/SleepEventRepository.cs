@@ -88,13 +88,13 @@ namespace Good_Night.Repository
             return SumHour;    
         }
 
-        public decimal AverageHours()
+        public string AverageHours()
         {
             AllHours();
             int SumHour = query.Sum();
             int QueryCount = query.Count();
-            decimal AvgHr = SumHour / QueryCount;
-            return AvgHr;
+            decimal AvgHr = (decimal)SumHour / (decimal)QueryCount;
+            return AvgHr.ToString("#.##");
         }
 
         public SleepEvent GetByDate(string date)
